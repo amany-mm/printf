@@ -5,13 +5,17 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <stddef.h>
 
 int _putchar(char c);
+
+int print_char(va_list args);
+int print_string(va_list args);
+int print_percent(va_list args);
+int print_int(va_list args);
+int (*get_op_func(char s))(va_list args);
 int _printf(const char *format, ...);
-void print_char(va_list args);
-void print_string(va_list args);
-void print_percent(va_list args);
-void print_int(va_list args);
+
 
 /**
  * struct specifier - structure
@@ -21,7 +25,9 @@ void print_int(va_list args);
 typedef struct specifier
 {
 	char letter;
-	void (*func)(va_list);
+	int (*func)(va_list);
 } specifier_t;
+
+
 
 #endif
