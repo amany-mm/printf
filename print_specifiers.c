@@ -60,40 +60,47 @@ int print_percent(va_list args)
 }
 
 /**
- * print_int - prints an integer
+ * print_int - prints integers signed & unsigned
  * @args: args
  * Return: no of func characters
  */
 int print_int(va_list args)
-{	int num = va_arg(args, int);
+{
+	unsigned int num;
+	int arg;
+	int no_digit = 0;
 	int divisor = 1;
-	int counter = 0;
-	int digit;
+	char n;
 
-	if (num < 0)
+	arg = va_arg(args, int);
+	if (arg == 0)
 	{
-		_putchar('-');
-		counter++;
-		num = -num;
+		n = '0';
+		_putchar(n);
+		return (1);
 	}
-	if (num == 0)
+	if (arg < 0)
 	{
-		_putchar('0');
-		return (counter + 1);
+		n = '-';
+		_putchar(n);
+		no_digit = 1;
+		num = arg * -1;
 	}
-	while (num / divisor >= 10)
-	{
+	else
+		num = arg;
+
+	while ((num / divisor) >= 10)
 		divisor *= 10;
-	}
 
-	while (divisor > 0)
+	while (divisor != 0)
 	{
-		digit = num / divisor;
-		_putchar('0' + digit);
-		counter++;
+		n = '0' + (num / divisor);
+		_putchar(n);
+		no_digit++;
+
 		num %= divisor;
 		divisor /= 10;
 	}
-	return (counter);
-}
 
+	return (no_digit);
+}
