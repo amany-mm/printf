@@ -15,7 +15,7 @@ int _putchar(char c)
 /**
  * print_char - prints a character
  * @args: args
- * Return: no of func characters
+ * Return: no of characters printed
  */
 int print_char(va_list args)
 {
@@ -26,7 +26,7 @@ int print_char(va_list args)
 /**
  * print_string - prints a string
  * @args: args
- * Return: no of func characters
+ * Return: no of string characters printed
  */
 int print_string(va_list args)
 {
@@ -50,7 +50,7 @@ int print_string(va_list args)
 /**
  * print_percent - prints a percentage
  * @args: args
- * Return: no of func characters
+ * Return: (1) % character printed
  */
 int print_percent(va_list args)
 {
@@ -62,7 +62,7 @@ int print_percent(va_list args)
 /**
  * print_int - prints integers signed & unsigned
  * @args: args
- * Return: no of func characters
+ * Return: no of integer digits printed
  */
 int print_int(va_list args)
 {
