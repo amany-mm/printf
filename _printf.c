@@ -39,7 +39,9 @@ int _printf(const char *format, ...)
 	int counter = 0;
 	int (*op_f)(va_list);
 
-	if (format == NULL)
+	if (!format || (format[i] == '%' && !format[i + 1]))
+		return (-1);
+	if (format[i] == '%' && format[i + 1] == ' ' && !format[i + 2])
 		return (-1);
 	va_start(args, format);
 	while (format[i] != '\0')
@@ -60,10 +62,7 @@ int _printf(const char *format, ...)
 				i++;
 			}
 			else
-			{
-				_putchar('%');
-				counter++;
-			}
+				_putchar('%'), counter++;
 		}
 		else
 		{
