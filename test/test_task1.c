@@ -1,10 +1,8 @@
-#include <limits.h>
 #include "main.h"
 
 /**
- * main - Entry point
- *
- * Return: Always 0
+ * main - Task 1 Tests
+ * Return: 0 Always
  */
 int main(void)
 {
@@ -42,7 +40,7 @@ int main(void)
 	_printf("_printf:%d \n", INT_MAX);
 	printf("printf:%d\n", INT_MAX);
 
-	_printf("_printf:%d \n", INT_MIN); /* Fails min negative int*/
+	_printf("_printf:%d \n", INT_MIN);
 	printf("printf:%d \n", INT_MIN);
 
 	return (0);
