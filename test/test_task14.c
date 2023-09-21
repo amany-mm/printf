@@ -6,28 +6,31 @@
  */
 int main(void)
 {
-	char s[] = "ROT13 (\"rotate by 13 places\", sometimes hyphenated ROT-13)";
-	char *p;
+	int len1, len2 = 0;
+	char *str1, *str2;
 
-	p = s;
+	str1 = "Guvf fragrapr vf ergevrirq sebz in_netf!\n";
+	len1 = _printf("%R", str1);
+	len2 = printf("This sentence is retrieved from va_args!\n");
 
-	_printf("_printf:[%R]\n", p);
-	/**
-	 * expected output:
-	 * EBG13 ("ebgngr ol 13 cynprf", fbzrgvzrf ulcurangrq EBG-13)
-	*/
+	printf("%d\n", len1);
+	printf("%d\n", len2);
 
-	_printf("_printf:[%R]\n", p);
+	printf("======================================\n");
+	str2 = "Complete the sentence: You %R nothing, Jon Snow.\n";
 
-	/**
-	 * expected output
-	 * "ROT13 (\"rotate by 13 places\", sometimes hyphenated ROT-13)
-	*/
+	len1 = _printf(str2, "xabj");
+	len2 = printf("Complete the sentence: You know nothing, Jon Snow.\n");
 
-	_printf("_printf:[%R]\n", p);
-	/**
-	* expected output
-		* EBG13 ("ebgngr ol 13 cynprf", fbzrgvzrf ulcurangrq EBG-13)
-	*/
+	printf("%d\n", len1);
+	printf("%d\n", len2);
+
+	printf("======================================\n");
+	len1 = _printf(str2, "");
+	len2 = printf("Complete the sentence: You  nothing, Jon Snow.\n");
+
+	printf("%d\n", len1);
+	printf("%d\n", len2);
+
 	return (0);
 }

@@ -12,9 +12,10 @@
 
 /* helpers functions */
 int _putchar(char c);
+int _strlen(char *s);
+void rot13(char *str);
 char *convert_int_to_binary(unsigned int int_num, int binary_size);
 char *convert_long_to_hexadecimal(unsigned long long_num, int p_size);
-void rot13(char *str);
 
 /* print functions */
 int print_char(va_list args);

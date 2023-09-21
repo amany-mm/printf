@@ -2,23 +2,23 @@
 
 /**
  * rot13 - encodes a string using rot13
- * @str: string to rotate
+ * @s: string to rotate
  * Return: NULL
 */
-void rot13(char *str)
+void rot13(char *s)
 {
 	int i = 0;
 
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 	{
-		while ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
+		while ((s[i] >= 'a' && s[i] <= 'm') || (s[i] >= 'A' && s[i] <= 'M'))
 		{
-			str[i] += 13;
+			s[i] += 13;
 			i++;
 		}
 
-		if ((str[i] >= 'n' && str[i] <= 'z') || (str[i] >= 'N' && str[i] <= 'Z'))
-			str[i] -= 13;
+		if ((s[i] >= 'n' && s[i] <= 'z') || (s[i] >= 'N' && s[i] <= 'Z'))
+			s[i] -= 13;
 
 		i++;
 	}
@@ -31,21 +31,28 @@ void rot13(char *str)
 */
 int print_rot13_string(va_list args)
 {
-	char *str;
+	char *str, *s;
 	int no_chars = 0;
+	int length = 0;
+	int i = 0;
 
-	str = va_arg(args, char *);
+	str = va_arg(args, char*);
 
-	if (str == NULL)
-		str = "(null)";
+	length = _strlen(str);
+	s = malloc(sizeof(char) * (length + 1));
 
-	rot13(str);
+	if (s == NULL)
+		return (0);
 
-	while (*str != '\0')
-	{
-		_putchar(*str);
-		str++;
-		no_chars++;
-	}
+	for (i = 0; i < length; i++)
+		*(s + i) = *(str + i);
+
+	s[length] = '\0';
+
+	rot13(s);
+
+	no_chars = write(STDOUT_FILENO, s, length);
+	free(s);
+
 	return (no_chars);
 }
