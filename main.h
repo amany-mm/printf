@@ -24,6 +24,7 @@ int print_percent(va_list args);
 int print_int(va_list args);
 int print_binary(va_list args);
 int print_pointer(va_list args);
+int print_rev(va_list args);
 int print_rot13_string(va_list args);
 int (*get_op_func(char s))(va_list args);
 int _printf(const char *format, ...);
