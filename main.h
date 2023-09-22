@@ -17,6 +17,8 @@ char *_strcpy(char *dest, char *src);
 void rot13(char *str);
 char *convert_int_to_binary(unsigned int int_num, int binary_size);
 char *convert_long_to_hexadecimal(unsigned long long_num, int p_size);
+char *convert_int_to_hexadecimal_lowercase(unsigned int num, int size);
+char *convert_int_to_hexadecimal_uppercase(unsigned int num, int size);
 
 /* print functions */
 int print_char(va_list args);
@@ -28,6 +30,7 @@ int print_ascii(va_list args);
 int print_pointer(va_list args);
 int print_rev(va_list args);
 int print_rot13_string(va_list args);
+int print_hexa_lowercase(va_list args);
 int (*get_op_func(char s))(va_list args);
 int _printf(const char *format, ...);
 
