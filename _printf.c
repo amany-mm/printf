@@ -21,6 +21,7 @@ int (*get_op_func(char s))(va_list args)
 		{'R', print_rot13_string},
 		{'S', print_ascii},
 		{'x', print_hexa_lowercase},
+		{'X', print_hexa_uppercase},
 		{'\0', NULL}
 	};
 	while (specifier[i].letter != '\0')
