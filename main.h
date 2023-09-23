@@ -33,6 +33,7 @@ int print_rot13_string(va_list args);
 int print_hexa_lowercase(va_list args);
 int print_hexa_uppercase(va_list args);
 int print_unsigned_decimal_u(va_list args);
+int print_octal(va_list args);
 int (*get_op_func(char s))(va_list args);
 int _printf(const char *format, ...);
 
