@@ -1,5 +1,9 @@
 # C programming Printf function implementation
 
+## Resources
+* [Secrets of print](https://www.academia.edu/10297206/Secrets_of_printf_)
+* man or help: `printf (3)`
+
 ## Compilation
 ```
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
@@ -9,7 +13,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 * OS: Ubuntu
 * Compiler: gcc
 * Style guidelines: [Betty style](https://github.com/alx-tools/Betty/wiki)
-* 
+  
 ### Requirements
 * All files will compiled using gcc, using the options `-Wall -Werror -Wextra -pedantic -std=gnu89`
 * All files end with a new line
